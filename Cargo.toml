@@ -1,0 +1,16 @@
+[package]
+name = "tower-sessions-sled-store"
+version = "0.1.0"
+edition = "2021"
+description = "Sled session store. Not for direct use; see the `tower-sessions` crate for details."
+license = "MIT"
+readme = "readme.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-trait = "0.1.77"
+rmp-serde = "1.1.2"
+sled = "0.34.7"
+tokio = { version = "1.36.0", features = ["rt"] }
+tower-sessions = { version = "0.10.4", default-features = false }
