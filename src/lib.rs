@@ -19,8 +19,9 @@ impl SledStore {
     /// A [`sled::Tree`] can be acquired by taking one from a [`sled::Db`]
     ///
     /// ```rust,no_run
-    /// let sled = sled::open("storage");
-    /// let session_store = SledStore::new(sled.open_tree("session").expect("Error opening tree"))
+    /// use tower_sessions_sled_store::SledStore;
+    /// let sled = sled::open("storage").unwrap();
+    /// let session_store = SledStore::new(sled.open_tree("session").expect("Error opening tree"));
     /// ```
     pub fn new(branch: sled::Tree) -> Self {
         Self { sled: branch }
